@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div{
+            margin-top: 20px;
+        }
+        /*div#ressoma{
+            margin-top: 20px;
+        }
+        div#subtrair{
+            margin-top: 20px;
+        }
+        div#ressub{
+            margin-top: 20px;
+        }*/
+    </style>
+</head>
+<body>
+    <h1>Somando números</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="ressoma">Resultado...</div>
+
+    <div id="subtrair">
+        <input type="number" name="txtn3" id="txtn3"> -
+        <input type="number" name="txtn4" id="txtn4">
+        <input type="button" value="Subtrair" onclick="subtrair()">
+        <div id="ressub">Resultado...</div>
+    </div>
+
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var ressoma = document.getElementById('ressoma')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            ressoma.innerHTML = `A soma entre ${n1} e ${n2} foi <strong>${s}</strong>`
+        }
+        function subtrair() {
+            var tn3 = document.getElementById('txtn3')
+            var tn4 = document.getElementById('txtn4')
+            var ressub = document.getElementById('ressub')
+            var n1 = Number(tn3.value)
+            var n2 = Number(tn4.value)
+            var sub = n1 - n2
+            ressub.innerHTML = `A subtração entre ${n1} e ${n2} foi <strong>${sub}</strong>`
+        }
+    </script>
+
+</body>
+</html>
